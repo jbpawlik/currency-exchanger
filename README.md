@@ -15,13 +15,14 @@ CurrencyXChange is built using HTML, CSS, and Bootstrap. Backend logic is writte
 1. Because this project makes calls to an API, it is necessary to register for a free account and API key at [exchangerate-api.com](https://www.exchangerate-api.com/). Click on Get Free Key at the top of the page and follow the instructions.
 2. Download or clone the [repository](http://github.com/jbpawlik/currency-exchanger) to your local machine
 3. Navigate to the top level of the directory
-4. Create an empty file named .env
-5. Inside the .env file, write "API_Key=" (without quotes) and paste in your API key. Once built, the .gitignore file included in the repository will hide this file and protect your API key so that others will not be able to access it
-6. Install Node Package Manager before proceeding with the rest of the instructions
-7. Run "npm install" in your terminal
-8. Run "npm run build" in your terminal
-9. "npm run start" will open the website in your browser
-10. Any API errors will be reported in a text field on the site
+4. Create an empty file named .env inside the directory
+5. Inside the .env file, write "API_Key=" (without quotes), paste in your API key, and save.
+6. Open the .gitinore file and add .env to the list of ignored files. This will prevent your .env file and API key from being uploaded to GitHub, to protect your key from unauthorized access
+7. Install Node Package Manager before proceeding with the rest of the instructions
+8. Open a terminal in the top level of the directory and run "npm install"
+9. Run "npm run build"
+10. "npm run start" will open the website in your browser
+11. Any API errors will be reported in a text field on the site. Information about API errors can be found [here](https://blog.runscope.com/posts/how-to-debug-common-api-errors)
 
 ### __Tests/Specifications__
 Full tests and specifications can be found in the __tests__ folder in the directory.
