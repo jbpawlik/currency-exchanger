@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import ExchangeCurrency from './services/exchangerate';
+import ConvertUSD from './services/exchangerate';
 
 //CurrencyXChange UI Logic
 
@@ -14,7 +14,7 @@ function displayErrors(error) {
 
 
 //Call API to get USD conversion rates when user loads the page, save to sessionStorage
-ExchangeCurrency.getRates('USD')
+ConvertUSD.getRates('USD')
   .then(function(response) {
     if (response instanceof Error) {
       throw Error(response.message);
@@ -39,10 +39,11 @@ $('#convertUSD').click(function() {
   let convertedAmount = (amount * exchangeRate).toFixed(2);
   if (isNaN(convertedAmount) === false) {
     $('#outputAmount').html(convertedAmount);
-    $('#currencyCode').html(currency)
+    $('#currencyCode').html(currency);
   } else {
     $('#outputAmount').html('');
-    $('#currencyCode').html('Currency not supported')
+    $('#currencyCode').html('Currency not supported');
   }
-  
 });
+
+//Convert international currencies

@@ -1,6 +1,6 @@
 //Call ExchangeRate API to request USD conversion rates
 
-export default class ExchangeCurrency {
+export default class ConvertUSD {
   static async getRates(currency) {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}`)
       .then(function(response) {
