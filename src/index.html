@@ -23,7 +23,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </div> -->
-          <input type="number" id="enterAmount" min="1" placeholder="amount in USD">
+          $<input type="number" id="enterAmount" min="0" placeholder="amount in USD" value="1" oninput="validity.valid||(value='')" required>
       </div>
       <div class="col-4">
         <select id="outputDropdown">
@@ -32,14 +32,15 @@
           <option value="JMD">Jamaican Dollar</option>
           <option value="CUP">Cuban Peso</option>
           <option value="XCD">East Caribbean Dollar</option>
+          <option value="KPW">North Korean Won</option>
+          <option value="ZWL">Zimbabwean Dollar</option>
         </select>
       </div>
       <div class="col-4">
-        <button type="submit" id="convertUSD">convert</button>
-        <div id="outputAmount"></div>
+        <button type="submit" id="convertUSD">convert</button><span id="outputAmount"></span><span id="currencyCode"></span>
       </div>
       </div>
-      <div id="errorOutput"></div>
+      <div><p id="errorOutput"></p></div>
     </div>
   </div>
 </body>

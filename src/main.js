@@ -7,6 +7,11 @@ import ExchangeCurrency from './services/exchangerate';
 //CurrencyXChange UI Logic
 
 
+//Display errors
+function displayErrors(error) {
+  $('#errorOutput').html(error);
+}
+
 
 //Call API to get USD conversion rates when user loads the page, save to sessionStorage
 ExchangeCurrency.getRates('USD')
@@ -18,8 +23,9 @@ ExchangeCurrency.getRates('USD')
     sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates));
   })
   .catch(function(error) {
-    $('#errorOutput').html(error);
+    displayErrors(error);
   });
+
 
 
 //Click to convert USD into other currencies
@@ -30,7 +36,13 @@ $('#convertUSD').click(function() {
   let currency = $('#outputDropdown').val();
 
   let exchangeRate = ratesArray[currency];
-  console.log(exchangeRate);
   let convertedAmount = (amount * exchangeRate).toFixed(2);
-  $('#outputAmount').html(convertedAmount);
+  if (isNaN(convertedAmount) === false) {
+    $('#outputAmount').html(convertedAmount);
+    $('#currencyCode').html(currency)
+  } else {
+    $('#outputAmount').html('');
+    $('#currencyCode').html('Currency not supported')
+  }
+  
 });
