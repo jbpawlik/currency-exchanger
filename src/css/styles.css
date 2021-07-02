@@ -1,5 +1,5 @@
 body {
-  background-image: url('/assets/images/currency.jpg');
+  background-image: url(../assets/images/currency.jpg);
   background-repeat: repeat-y;
   background-size: contain;
   font-family: 'Montserrat', sans-serif;
