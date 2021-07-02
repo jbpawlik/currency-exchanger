@@ -3,6 +3,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import ConvertUSD from './services/exchangerate';
+import GlobalCurrency from './services/convertglobalcurrency';
 
 //CurrencyXChange UI Logic
 
@@ -26,8 +27,6 @@ ConvertUSD.getRates('USD')
     displayErrors(error);
   });
 
-
-
 //Click to convert USD into other currencies
 $('#convertUSD').click(function() {
   let rates = sessionStorage.getItem('usdExchangeRates');
@@ -46,4 +45,26 @@ $('#convertUSD').click(function() {
   }
 });
 
+
+
 //Convert international currencies
+$('#convertGlobal').click(function() {
+
+  let amount = $('#enterAmount2').val();
+  let startingCurrency = $('#startingCurrency').val();
+  let endingCurrency = $('#endingCurrency').val();
+
+  GlobalCurrency.convertCurrency(amount, startingCurrency, endingCurrency)
+    .then(function(response) {
+      if (response instanceof Error) {
+        throw Error(`ExchangeRate-API error: ${response.message}`);
+      }
+      let internationalAmount = response.conversion_result;
+      console.log(internationalAmount);
+      $('#globalOutput').html(internationalAmount);
+    })
+    .catch(function(error) {
+      displayErrors(error.message);
+
+    });
+});

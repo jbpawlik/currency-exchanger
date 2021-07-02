@@ -9,7 +9,7 @@ CurrencyXChange is a proof-of-concept website for a service that converts and ex
 
 
 ### __Technologies Used__
-CurrencyXChange is built using HTML, CSS, and Bootstrap. Backend logic is written in Javascript and JQuery. API calls are made with Javascript using the Fetch API, then parsed from JSON. Calls are made to ExchangeRate-API, a service that converts currency using forex data.
+CurrencyXChange is built using HTML, CSS, and Bootstrap. Backend logic is written in Javascript and JQuery. API calls are made with Javascript using the Fetch API, then parsed from JSON. Calls are made to ExchangeRate-API, a service that converts currency using forex data. Postman was used to evaluate API calls.
 
 ### __Setup/Installation__
 1. Because this project makes calls to an API, it is necessary to register for a free account and API key at [exchangerate-api.com](https://www.exchangerate-api.com/). Click on Get Free Key at the top of the page and follow the instructions.
