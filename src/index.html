@@ -11,23 +11,32 @@
     <div class="jumbotron">
       <h1>CurrencyXChange</h1>
     </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="chooseInputCurrency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Currency</button>>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" value="USD">USD</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-      </button>
+    <h3>Convert US Dollars to World Currencies</h3>
+    <div class="row">
+      <div class="col-4">
+        <!-- <div class="dropdown"> -->
+          <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="chooseInputCurrency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Currency</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" value="USD">USD</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div> -->
+        <input type="number" id="enterAmount" min="1" placeholder="amount in USD">
     </div>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="chooseOutputCurrency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Choose Currency</button>>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#" value="GBP">GBP</a>
-        <a class="dropdown-item" href="#">Another action</a>
-        <a class="dropdown-item" href="#">Something else here</a>
-      </div>
-      </button>
+    <div class="col-4">
+      <select id="outputDropdown">
+        <option value="CAD">Canadian Dollar</option>
+        <option value="MXN">Mexican Peso</option>
+        <option value="JMD">Jamaican Dollar</option>
+        <option value="CUP">Cuban Peso</option>
+        <option value="XCD">East Caribbean Dollar</option>
+      </select>
+    </div>
+    <div class="col-4">
+      <button type="submit" id="convertUSD">convert</button>
+      <div id="outputAmount"></div>
+    </div>
     </div>
   </div>
 </body>

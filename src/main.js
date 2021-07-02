@@ -6,16 +6,34 @@ import ExchangeCurrency from './services/exchangerate';
 
 //CurrencyXChange UI Logic
 
-let currency = 'USD';
+
 
 //Call API to get USD conversion rates when user loads the page, save to sessionStorage
-ExchangeCurrency.getRates(currency)
+
+ExchangeCurrency.getRates('USD')
   .then(function(response) {
     if (response instanceof Error) {
-      throw Error(response.message)
+      throw Error(response.message);
     }
-    console.log(response);
-    sessionStorage.setItem('usdExchangeRates', JSON.stringify(response.conversion_rates));
-    console.log(sessionStorage);
+    let conversionRates = response.conversion_rates;
+    sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates));
   });
-$
+
+//Retrieve conversion rates and return them as array
+
+
+$('#convertUSD').click(function() {
+  let rates = sessionStorage.getItem('usdExchangeRates');
+  let ratesArray = JSON.parse(rates);
+  let amount = $('#enterAmount').val();
+  let currency = $('#outputDropdown').val();
+
+  let exchangeRate = ratesArray[currency]
+  // let exchangeRate = ratesArray.CAD
+  console.log(exchangeRate)
+  let convertedAmount = (amount * exchangeRate);
+  $('#outputAmount').html(convertedAmount)
+
+
+
+})
