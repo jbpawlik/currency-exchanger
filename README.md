@@ -1,25 +1,27 @@
-# __Application Name__
+# __CurrencyXChange__
 
-<img src="src/assets/images/osmo.png" alt="The Profit Planet" width="400">
+<img src="src/assets/images/osmo.png" alt="The Currency x Change building" width="400">
 
 ### by [James Benjamin Pawlik](http://github.com/jbpawlik)
 
-
 ### __Description__
-
+CurrencyXChange is a proof-of-concept website for a service that converts and exchanges international currencies. It makes calls to an API that provides forex rates and uses the data returned to set prices.
 
 
 ### __Technologies Used__
-
+CurrencyXChange is built using HTML, CSS, and Bootstrap. Backend logic is written in Javascript and JQuery. API calls are made with Javascript using the Fetch API, then parsed from JSON. Calls are made to ExchangeRate-API, a service that converts currency using forex data.
 
 ### __Setup/Installation__
-1. Download or clone the [repository](http://github.com/jbpawlik/ to your local machine
-2. Navigate to the top level of the directory
-3. Install Node Package Manager before proceeding with the rest of the instructions
-4. Run "npm install" in your terminal
-5. Run "npm build"
-6. "npm run start" will open the website in your browser
-7. "npm run test" will allow you to test the code
+1. Because this project makes calls to an API, it is necessary to register for a free account and API key at [exchangerate-api.com](https://www.exchangerate-api.com/). Click on Get Free Key at the top of the page and follow the instructions.
+2. Download or clone the [repository](http://github.com/jbpawlik/currency-exchanger) to your local machine
+3. Navigate to the top level of the directory
+4. Create an empty file named .env
+5. Inside the .env file, write "API_Key=" (without quotes) and paste in your API key. Once built, the .gitignore file included in the repository will hide this file and protect your API key so that others will not be able to access it
+6. Install Node Package Manager before proceeding with the rest of the instructions
+7. Run "npm install" in your terminal
+8. Run "npm run build" in your terminal
+9. "npm run start" will open the website in your browser
+10. Any API errors will be reported in a text field on the site
 
 ### __Tests/Specifications__
 Full tests and specifications can be found in the __tests__ folder in the directory.
@@ -27,8 +29,7 @@ Full tests and specifications can be found in the __tests__ folder in the direct
 ### __Known Bugs / Future Goals__
 No bugs have been found or reported. Please contact the author if you experience poor performance.
 
-Future goals for ____:
-
+Future goals for __CurrencyXChange__:
 
 ### __License__
 This software is licensed under the [BSD license](license.txt).
