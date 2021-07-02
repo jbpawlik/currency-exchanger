@@ -7,14 +7,14 @@
   <title>CurrencyXChange</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
     <div id="header">
       <h1>CURRENCY X CHANGE</h1>
-      <img src="assets/images/currency.jpg" alt="International Currency" title="International Currency" width="400">
-      <h2>INTERNATIONAL FOREX TRADING</h2>
+      <img src="assets/images/forex.jpg" alt="International Currency" title="International Currency" width="400">
+      <h3>INTERNATIONAL FOREX TRADING</h3>
       <div id="errorDiv">
         <h4>Error connecting to database: <span id="errorOutput"></span>. Please reload page.</h4>
       </div>
@@ -39,9 +39,9 @@
         <div class="col-4">
           <button type="submit" id="convertUSD">convert</button>
         </div>
-        <div>
-          <p><span id="outputAmount"></span>  <span id="currencyCode"></span></p>
-        </div>
+      </div>
+      <div>
+        <h2><span id="outputAmount"></span>  <span id="currencyCode"></span></h2>
       </div>
     </div>
     <div class="container" id="global">
@@ -58,8 +58,12 @@
           <input type="text" id="endingCurrency" placeholder="Ending Currency" value="ZMW">
         </div>
         <div class="col-3">
-          <button type="submit" id="convertGlobal">convert</button><span id="outputAmount2"></span><span id="currencyCode"></span><span id="globalOutput"></span> <span id="currencyCode2"></span>
+          <button type="submit" id="convertGlobal">convert</button>
+        </div>
       </div>
+        <div>
+          <h2><span id="outputAmount2"></span><span id="currencyCode"></span><span id="globalOutput"></span> <span id="currencyCode2"></span></h2>
+        </div>
     </div>
   </div>
 </body>
