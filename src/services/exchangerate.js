@@ -14,25 +14,3 @@ export default class ExchangeCurrency {
       });
   }
 }
-
-//Example of how to use Windows.sessionStorage
-// async function getSavedMeetingData() {
-//   const meetingData = await getMeetingData();
-// }
-
-// async function getMeetingData() {
-//   const preloadedData = sessionStorage.getItem('meetingData');
-
-//   if (!preloadedData) {
-//     try {
-//       const response = await fetch('https://myapiurl.com/');
-//       const data = validate(response.json());
-//       sessionStorage.setItem('meetingData', JSON.stringify(data));
-//       return data;
-//     } catch (e) {
-//       console.log('Whoa! Fetch error with getMeetingData()');
-//     }
-//   } else {
-//     return JSON.parse(preloadedData);
-//   }
-// }

@@ -9,7 +9,6 @@ import ExchangeCurrency from './services/exchangerate';
 
 
 //Call API to get USD conversion rates when user loads the page, save to sessionStorage
-
 ExchangeCurrency.getRates('USD')
   .then(function(response) {
     if (response instanceof Error) {
@@ -17,23 +16,21 @@ ExchangeCurrency.getRates('USD')
     }
     let conversionRates = response.conversion_rates;
     sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates));
+  })
+  .catch(function(error) {
+    $('#errorOutput').html(error);
   });
 
-//Retrieve conversion rates and return them as array
 
-
+//Click to convert USD into other currencies
 $('#convertUSD').click(function() {
   let rates = sessionStorage.getItem('usdExchangeRates');
   let ratesArray = JSON.parse(rates);
   let amount = $('#enterAmount').val();
   let currency = $('#outputDropdown').val();
 
-  let exchangeRate = ratesArray[currency]
-  // let exchangeRate = ratesArray.CAD
-  console.log(exchangeRate)
-  let convertedAmount = (amount * exchangeRate);
-  $('#outputAmount').html(convertedAmount)
-
-
-
-})
+  let exchangeRate = ratesArray[currency];
+  console.log(exchangeRate);
+  let convertedAmount = (amount * exchangeRate).toFixed(2);
+  $('#outputAmount').html(convertedAmount);
+});
