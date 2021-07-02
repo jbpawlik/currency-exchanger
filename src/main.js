@@ -10,6 +10,7 @@ import GlobalCurrency from './services/convertglobalcurrency';
 
 //Display errors
 function displayErrors(error) {
+  $('#errorDiv').show();
   $('#errorOutput').html(error);
 }
 
@@ -51,8 +52,8 @@ $('#convertUSD').click(function() {
 $('#convertGlobal').click(function() {
 
   let amount = $('#enterAmount2').val();
-  let startingCurrency = $('#startingCurrency').val();
-  let endingCurrency = $('#endingCurrency').val();
+  let startingCurrency = $('#startingCurrency').val().toUpperCase();
+  let endingCurrency = $('#endingCurrency').val().toUpperCase();
 
   GlobalCurrency.convertCurrency(amount, startingCurrency, endingCurrency)
     .then(function(response) {
@@ -60,11 +61,10 @@ $('#convertGlobal').click(function() {
         throw Error(`ExchangeRate-API error: ${response.message}`);
       }
       let internationalAmount = response.conversion_result;
-      console.log(internationalAmount);
-      $('#globalOutput').html(internationalAmount);
+      $('#globalOutput').html(internationalAmount.toFixed(2));
+      $('#currencyCode2').html(endingCurrency);
     })
     .catch(function(error) {
       displayErrors(error.message);
-
     });
 });

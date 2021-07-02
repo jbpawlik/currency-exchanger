@@ -1,1 +1,22 @@
-
+body {
+  background-image: url('/assets/images/currency.jpg');
+  background-repeat: repeat-y;
+  background-size: contain;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: bolder;
+}
+#errorDiv {
+  display: none;
+}
+#header, #USD, #global {
+  text-align: center;
+  background-color: rgba(245, 245, 220, 0.9);
+  margin: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border: solid 1em rgba(0, 0, 0, 0.87);
+  border-radius: 1em;
+}
+input {
+  width: 50%;
+}

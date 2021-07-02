@@ -1,6 +1,6 @@
 # __CurrencyXChange__
 
-<img src="src/assets/images/osmo.png" alt="The Currency x Change building" width="400">
+<img src="src/assets/images/currency.jpg" alt="International Currency" title="International Currency" width="100">
 
 ### by [James Benjamin Pawlik](http://github.com/jbpawlik)
 

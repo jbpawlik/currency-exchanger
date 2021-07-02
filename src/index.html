@@ -5,54 +5,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CurrencyXChange</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <div class="jumbotron">
-      <h1>CurrencyXChange</h1>
-    </div>
-    <div class="container">
-      <div>
+    <div id="header">
+      <h1>CURRENCY X CHANGE</h1>
+      <img src="assets/images/currency.jpg" alt="International Currency" title="International Currency" width="400">
+      <h2>INTERNATIONAL FOREX TRADING</h2>
+      <div id="errorDiv">
         <h4>Error connecting to database: <span id="errorOutput"></span>. Please reload page.</h4>
       </div>
+    </div>
+    <div class="container" id="USD">
       <h3>Convert US Dollars to World Currencies</h3>
       <div class="row">
         <div class="col-4">
           $<input type="number" id="enterAmount" min="0" placeholder="amount in USD" value="1" oninput="validity.valid||(value='')">
-      </div>
-      <div class="col-4">
-        <select id="outputDropdown">
-          <option value="CAD">Canadian Dollar</option>
-          <option value="MXN">Mexican Peso</option>
-          <option value="JMD">Jamaican Dollar</option>
-          <option value="CUP">Cuban Peso</option>
-          <option value="XCD">East Caribbean Dollar</option>
-          <option value="KPW">North Korean Won</option>
-          <option value="ZWL">Zimbabwean Dollar</option>
-        </select>
-      </div>
-      <div class="col-4">
-        <button type="submit" id="convertUSD">convert</button><span id="outputAmount"></span><span id="currencyCode"></span>
-      </div>
+        </div>
+        <div class="col-4">
+          <select id="outputDropdown">
+            <option value="CAD">Canadian Dollar</option>
+            <option value="MXN">Mexican Peso</option>
+            <option value="JMD">Jamaican Dollar</option>
+            <option value="CUP">Cuban Peso</option>
+            <option value="XCD">East Caribbean Dollar</option>
+            <option value="KPW">North Korean Won</option>
+            <option value="ZWL">Zimbabwean Dollar</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <button type="submit" id="convertUSD">convert</button>
+        </div>
+        <div>
+          <p><span id="outputAmount"></span>  <span id="currencyCode"></span></p>
+        </div>
       </div>
     </div>
-    <div class="container">
+    <div class="container" id="global">
       <h3>Convert Any Two Currencies</h3>
-      <p>Please enter a three-digit currency code using this format: USD, RUB, SBD, etc. A list of international currency codes can be found <a href="https://www.exchangerate-api.com/docs/supported-currencies">here</a>.</p>
+      <p>Please enter the three-letter currency code using this format. A list of international currency codes can be found <a href="https://www.exchangerate-api.com/docs/supported-currencies">here</a>.</p>
       <div class="row">
         <div class="col-3">
           <input type="number" id="enterAmount2" min="0" placeholder="amount to convert" value="1" oninput="validity.valid||(value='')">
         </div>
         <div class="col-3">
-          <input type="text" id="startingCurrency" placeholder="Starting Currency">
+          <input type="text" id="startingCurrency" placeholder="Starting Currency" value="AED">
         </div>
         <div class="col-3">
-          <input type="text" id="endingCurrency" placeholder="Ending Currency">
+          <input type="text" id="endingCurrency" placeholder="Ending Currency" value="ZMW">
         </div>
         <div class="col-3">
-          <button type="submit" id="convertGlobal">convert</button><span id="outputAmount2"></span><span id="currencyCode"></span>
-        </div>
-        <p id="globalOutput"></p>
+          <button type="submit" id="convertGlobal">convert</button><span id="outputAmount2"></span><span id="currencyCode"></span><span id="globalOutput"></span> <span id="currencyCode2"></span>
       </div>
     </div>
   </div>
