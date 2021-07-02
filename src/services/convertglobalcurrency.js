@@ -1,3 +1,5 @@
+//Call ExchangeRate-API Pair Conversion endpoint
+
 export default class GlobalCurrency {
   static async convertCurrency(amount, startingCurrency, endingCurrency) {
     try {

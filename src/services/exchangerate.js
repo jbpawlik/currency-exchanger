@@ -1,4 +1,4 @@
-//Call ExchangeRate API to request USD conversion rates
+//Call ExchangeRate-API Standard endpoint to request USD conversion rates
 
 export default class ConvertUSD {
   static async getRates(currency) {

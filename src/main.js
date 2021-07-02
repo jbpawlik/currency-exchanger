@@ -7,13 +7,11 @@ import GlobalCurrency from './services/convertglobalcurrency';
 
 //CurrencyXChange UI Logic
 
-
 //Display errors
 function displayErrors(error) {
   $('#errorDiv').show();
   $('#errorOutput').html(error);
 }
-
 
 //Call API to get USD conversion rates when user loads the page, save to sessionStorage
 ConvertUSD.getRates('USD')
@@ -45,8 +43,6 @@ $('#convertUSD').click(function() {
     $('#currencyCode').html('Currency not supported');
   }
 });
-
-
 
 //Convert international currencies
 $('#convertGlobal').click(function() {
