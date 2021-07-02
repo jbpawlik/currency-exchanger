@@ -10,68 +10,67 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="sidenav" style="width: 10%">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-  </div>
-  <div class="container" class="main">
-    <div id="header">
-      <h1>CURRENCY X CHANGE</h1>
-      <img src="assets/images/forex.jpg" alt="International Currency" title="International Currency" width="400">
-      <h3>INTERNATIONAL FOREX TRADING</h3>
-      <div id="errorDiv">
-        <h4>Error connecting to database: <span id="errorOutput"></span></h4>
-      </div>
+  <div class="d-flex" id="wrapper">
+    <div id="sidebar-wrapper">
+        <h2>USD Rates:</h2>
+        <p id="USDRates"></p>
     </div>
-    <div class="container" id="USD">
-      <h3>Convert US Dollars to World Currencies</h3>
-      <div class="row">
-        <div class="col-4">
-          $<input type="number" id="enterAmount" min="0" placeholder="amount in USD" value="1" oninput="validity.valid||(value='')">
-        </div>
-        <div class="col-4">
-          <select id="outputDropdown">
-            <option value="CAD">Canadian Dollar</option>
-            <option value="MXN">Mexican Peso</option>
-            <option value="JMD">Jamaican Dollar</option>
-            <option value="CUP">Cuban Peso</option>
-            <option value="XCD">East Caribbean Dollar</option>
-            <option value="KPW">North Korean Won</option>
-            <option value="ZWL">Zimbabwean Dollar</option>
-          </select>
-        </div>
-        <div class="col-4">
-          <button type="submit" id="convertUSD">convert</button>
+    <div class="container">
+      <div id="header">
+        <h1>CURRENCY X CHANGE</h1>
+        <img src="assets/images/forex.jpg" alt="International Currency" title="International Currency" width="400">
+        <h3>INTERNATIONAL FOREX TRADING</h3>
+        <div id="errorDiv">
+          <h4>Error connecting to database: <span id="errorOutput"></span></h4>
         </div>
       </div>
-      <div>
-        <h2><span id="outputAmount"></span>  <span id="currencyCode"></span></h2>
-      </div>
-    </div>
-    <div class="container" id="global">
-      <h3>Convert Any Two Currencies</h3>
-      <p>Please enter the three-letter currency code using this format. A list of international currency codes can be found <a href="https://www.exchangerate-api.com/docs/supported-currencies">here</a>.</p>
-      <div class="row">
-        <div class="col-3">
-          <input type="number" id="enterAmount2" min="0" placeholder="amount to convert" value="1" oninput="validity.valid||(value='')">
+      <div class="container" id="USD">
+        <h3>Convert US Dollars to World Currencies</h3>
+        <div class="row">
+          <div class="col-4">
+            $<input type="number" id="enterAmount" min="0" placeholder="amount in USD" value="1" oninput="validity.valid||(value='')">
+          </div>
+          <div class="col-4">
+            <select id="outputDropdown">
+              <option value="CAD">Canadian Dollar</option>
+              <option value="MXN">Mexican Peso</option>
+              <option value="JMD">Jamaican Dollar</option>
+              <option value="CUP">Cuban Peso</option>
+              <option value="XCD">East Caribbean Dollar</option>
+              <option value="KPW">North Korean Won</option>
+              <option value="ZWL">Zimbabwean Dollar</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <button type="submit" id="convertUSD">convert</button>
+          </div>
         </div>
-        <div class="col-3">
-          <input type="text" id="startingCurrency" placeholder="Starting Currency" value="AED">
-        </div>
-        <div class="col-3">
-          <input type="text" id="endingCurrency" placeholder="Ending Currency" value="ZMW">
-        </div>
-        <div class="col-3">
-          <button type="submit" id="convertGlobal">convert</button>
-        </div>
-      </div>
         <div>
-          <h2><span id="outputAmount2"></span><span id="currencyCode"></span><span id="globalOutput"></span> <span id="currencyCode2"></span></h2>
+          <h2><span id="outputAmount"></span>  <span id="currencyCode"></span></h2>
         </div>
+      </div>
+      <div class="container" id="global">
+        <h3>Convert Any Two Currencies</h3>
+        <p>Please enter the three-letter currency code using this format. A list of international currency codes can be found <a href="https://www.exchangerate-api.com/docs/supported-currencies">here</a>.</p>
+        <div class="row">
+          <div class="col-3">
+            <input type="number" id="enterAmount2" min="0" placeholder="amount to convert" value="1" oninput="validity.valid||(value='')">
+          </div>
+          <div class="col-3">
+            <input type="text" id="startingCurrency" placeholder="Starting Currency" value="AED">
+          </div>
+          <div class="col-3">
+            <input type="text" id="endingCurrency" placeholder="Ending Currency" value="ZMW">
+          </div>
+          <div class="col-3">
+            <button type="submit" id="convertGlobal">convert</button>
+          </div>
+        </div>
+          <div>
+            <h2><span id="outputAmount2"></span><span id="currencyCode"></span><span id="globalOutput"></span> <span id="currencyCode2"></span></h2>
+          </div>
+      </div>
     </div>
-    <
   </div>
 </body>
 </html>
