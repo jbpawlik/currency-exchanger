@@ -8,7 +8,7 @@ import GlobalCurrency from './services/convertglobalcurrency';
 //CurrencyXChange UI Logic
 
 //Display errors
-function displayErrors(error) {
+function displayCallErrors(error) {
   $('#errorDiv').show();
   $('#errorOutput').html(error);
 }
@@ -23,7 +23,7 @@ ConvertUSD.getRates('USD')
     sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates));
   })
   .catch(function(error) {
-    displayErrors(error);
+    displayCallErrors(error);
   });
 
 //Click to convert USD into other currencies
@@ -57,10 +57,13 @@ $('#convertGlobal').click(function() {
         throw Error(`ExchangeRate-API error: ${response.message}`);
       }
       let internationalAmount = response.conversion_result;
-      $('#globalOutput').html(internationalAmount.toFixed(2));
-      $('#currencyCode2').html(endingCurrency);
+      if (isNaN(internationalAmount) === true) {
+        $('#globalOutput').html('Currency not supported');
+      } else {
+        $('#globalOutput').html(internationalAmount.toFixed(2));
+        $('#currencyCode2').html(endingCurrency);}
     })
     .catch(function(error) {
-      displayErrors(error.message);
+      displayCallErrors(error.message);
     });
 });
