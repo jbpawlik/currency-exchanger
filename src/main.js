@@ -7,7 +7,7 @@ import GlobalCurrency from './services/convertglobalcurrency';
 
 //CurrencyXChange UI Logic
 
-//Display errors
+//Display API errors
 function displayCallErrors(error) {
   $('#errorDiv').show();
   $('#errorOutput').html(error);
@@ -21,9 +21,6 @@ ConvertUSD.getRates('USD')
     }
     let conversionRates = response.conversion_rates;
     sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates, null, "\n"));
-    // let usdRates = JSON.stringify(conversionRates, null, "\n")
-    // usdRates.replace(/}{"''"/g, '');
-    // $('#USDRates').html(sessionStorage);
   })
   .catch(function(error) {
     displayCallErrors(error);
@@ -41,14 +38,20 @@ $('#convertUSD').click(function() {
 
   let exchangeRate = ratesArray[currency];
   let convertedAmount = (amount * exchangeRate).toFixed(2);
-  if (isNaN(convertedAmount) === false) {
-    $('#outputAmount').html(convertedAmount);
+  convertUSD(convertedAmount);
+});
+
+//Outputs USD conversion or unsupported currency error
+function convertUSD(amount) {
+  let currency = $('#outputDropdown').val();
+  if (isNaN(amount) === false) {
+    $('#outputAmount').html(amount);
     $('#currencyCode').html(currency);
   } else {
     $('#outputAmount').html('');
     $('#currencyCode').html('Currency not supported');
   }
-});
+}
 
 //Convert international currencies
 $('#convertGlobal').click(function() {
@@ -65,6 +68,7 @@ $('#convertGlobal').click(function() {
       let internationalAmount = response.conversion_result;
       if (isNaN(internationalAmount) === true) {
         $('#globalOutput').html('Currency not supported');
+        $('#currencyCode2').html('');
       } else {
         $('#globalOutput').html(internationalAmount.toFixed(2));
         $('#currencyCode2').html(endingCurrency);}
@@ -73,3 +77,5 @@ $('#convertGlobal').click(function() {
       displayCallErrors(error.message);
     });
 });
+
+//outputs international currency conversion
