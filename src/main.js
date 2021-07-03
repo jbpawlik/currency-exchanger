@@ -66,16 +66,21 @@ $('#convertGlobal').click(function() {
         throw Error(`ExchangeRate-API error: ${response.message}`);
       }
       let internationalAmount = response.conversion_result;
-      if (isNaN(internationalAmount) === true) {
-        $('#globalOutput').html('Currency not supported');
-        $('#currencyCode2').html('');
-      } else {
-        $('#globalOutput').html(internationalAmount.toFixed(2));
-        $('#currencyCode2').html(endingCurrency);}
+      convertInternational(internationalAmount);
     })
     .catch(function(error) {
       displayCallErrors(error.message);
     });
 });
 
-//outputs international currency conversion
+//Outputs international currency conversion or unsupported currency error
+function convertInternational(amount) {
+  let endingCurrency = $('#endingCurrency').val().toUpperCase();
+  if (isNaN(amount) === true) {
+    $('#globalOutput').html('Currency not supported');
+    $('#currencyCode2').html('');
+  } else {
+    $('#globalOutput').html(amount.toFixed(2));
+    $('#currencyCode2').html(endingCurrency);
+  }
+}
