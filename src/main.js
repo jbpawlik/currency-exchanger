@@ -13,7 +13,7 @@ function displayCallErrors(error) {
   $('#errorOutput').html(error);
 }
 
-//Call API to get USD conversion rates when user loads the page, save to sessionStorage
+//When user loads page: call API to get USD conversion rates, save to sessionStorage, add to sidebar
 ConvertUSD.getRates('USD')
   .then(function(response) {
     if (response instanceof Error) {
@@ -22,12 +22,12 @@ ConvertUSD.getRates('USD')
     let conversionRates = response.conversion_rates;
     sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates, null, "\n"));
   })
+  .then(function() {
+    $('#USDRates').html(sessionStorage.getItem('usdExchangeRates').replace(/"/g, "").replace(/,/g, '<br>').replace(/{/g, "").replace(/}/g, ""));
+  })
   .catch(function(error) {
     displayCallErrors(error);
   });
-
-//Add USD conversion rates to sidebar
-$('#USDRates').html(sessionStorage.getItem('usdExchangeRates').replace(/"/g, "").replace(/,/g, '<br>').replace(/{/g, "").replace(/}/g, ""));
 
 //Click to convert USD into other currencies
 $('#convertUSD').click(function() {
