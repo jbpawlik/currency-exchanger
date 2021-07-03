@@ -20,11 +20,17 @@ ConvertUSD.getRates('USD')
       throw Error(response.message);
     }
     let conversionRates = response.conversion_rates;
-    sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates));
+    sessionStorage.setItem('usdExchangeRates', JSON.stringify(conversionRates, null, "\n"));
+    // let usdRates = JSON.stringify(conversionRates, null, "\n")
+    // usdRates.replace(/}{"''"/g, '');
+    // $('#USDRates').html(sessionStorage);
   })
   .catch(function(error) {
     displayCallErrors(error);
   });
+
+//Add USD conversion rates to sidebar
+$('#USDRates').html(sessionStorage.getItem('usdExchangeRates').replace(/"/g, "").replace(/,/g, '<br>').replace(/{/g, "").replace(/}/g, ""));
 
 //Click to convert USD into other currencies
 $('#convertUSD').click(function() {

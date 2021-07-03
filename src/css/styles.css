@@ -14,8 +14,9 @@ body {
   margin-top: 2em;
   border: solid 1em rgba(0, 0, 0, 0.87);
   border-radius: 1em;
-  text-align: center;
+  text-align: left;
   padding-top: 2em;
+  padding-left: .25em;
 }
 .container {
   margin: 1em;
@@ -48,6 +49,9 @@ img {
 h2 {
   text-align: center;
   margin: .5em;
+}
+h4 {
+  text-decoration: underline;
 }
 #outputDropdown {
   height: 90%;
