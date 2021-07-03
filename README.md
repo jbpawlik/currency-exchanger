@@ -24,8 +24,6 @@ The Currency X Change website is built using HTML, CSS, and Bootstrap. Service a
 10. "npm run start" will open the website in your browser
 11. Any API errors will be reported in a text field on the site. Information about API errors can be found [here](https://blog.runscope.com/posts/how-to-debug-common-api-errors)
 
-### __Tests/Specifications__
-Full tests and specifications can be found in the __tests__ folder in the directory.
 
 ### __Known Bugs / Future Goals__
 No bugs have been found or reported. Please contact the author if you experience poor performance.
