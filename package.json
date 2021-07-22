@@ -1,11 +1,11 @@
 {
-  "name": "shape-tracker",
+  "name": "currency-x-change",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "build": "webpack --mode=development",
-    "start": "npm run build & webpack-dev-server --open --mode development",
+    "start": "npm run build & webpack-dev-server --open --mode development --port $PORT --host 0.0.0.0",
     "lint": "eslint src/*.js",
     "test": "jest --coverage"
   },
