@@ -1,7 +1,6 @@
 # __CurrencyXChange__
 
-<img src="src/assets/images/screenshot.png" alt="Currency X Change website screenshot" title="Currency X Change Header" width="400">
-
+[!](https://github.com/jbpawlik/currency-exchanger/blob/main/src/assets/images/screenshot.PNG)
 ### by [James Benjamin Pawlik](http://github.com/jbpawlik)
 
 ### __Description__
